@@ -17,15 +17,15 @@ const WeatherFive = () => {
               <p>{finalDate}</p>
               <div className="container">
                 <img
-                  src={`./assets/icons/${day.weather[0].icon}.png`}
+                  src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
                   alt={day.weather[0].description}
                 />
                 <div className="temp-cont">
                   <div className="temp">
-                    <p>{Math.round(day.main.temp_max)}</p>
+                    <p>{Math.round(day.main.temp_max)}ºC</p>
                   </div>
                   <div className="temp">
-                    <p>{Math.round(day.main.temp_min)}</p>
+                    <p>{Math.round(day.main.temp_min)}ºC</p>
                   </div>
                 </div>
               </div>

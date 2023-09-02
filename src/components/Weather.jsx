@@ -4,8 +4,8 @@ import { utcToZonedTime } from "date-fns-tz";
 
 const Weather = ({ tabletOrLess }) => {
   const { apiInfo } = useContext(ApiContext);
-  const sunriseUtcTime = apiInfo.sys.sunrise;
-  const sunsetUtcTime = apiInfo.sys.sunset;
+  const sunriseUtcTime = apiInfo?.sys?.sunrise;
+  const sunsetUtcTime = apiInfo?.sys?.sunset;
 
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const sunriseLocalDate = utcToZonedTime(
@@ -32,7 +32,7 @@ const Weather = ({ tabletOrLess }) => {
             <h3>{apiInfo.name}</h3>
             <p>{apiInfo.weather[0].description}</p>
             <img
-              src={`./assets/icons/${apiInfo.weather[0].icon}.png`}
+              src={`http://openweathermap.org/img/w/${apiInfo.weather[0].icon}.png`}
               alt="icono tiempo"
             />
             <p>{Math.round(apiInfo.main.temp)} °C</p>
@@ -64,7 +64,7 @@ const Weather = ({ tabletOrLess }) => {
             <h3>{apiInfo.name}</h3>
             <p>{apiInfo.weather[0].description}</p>
             <img
-              src={`./assets/icons/${apiInfo.weather[0].icon}.png`}
+              src={`http://openweathermap.org/img/w/${apiInfo.weather[0].icon}.png`}
               alt="icono tiempo"
             />
             <p>{Math.round(apiInfo.main.temp)} °C</p>

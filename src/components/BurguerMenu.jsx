@@ -1,12 +1,14 @@
 import { useState } from "react";
-import Navbar from "../NavBar/NavBar";
+import Navbar from "./NavBar";
 
 const BurguerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div id="hamburguesa" className={isOpen ? "isOpen" : "isClosed"}>
-      <Navbar column isOpen={isOpen} setIsOpen={setIsOpen} />
-    </div>
+    <>
+      <div id="hamburguesa" className={isOpen ? "isOpen" : "isClosed"}>
+        <Navbar column isOpen={isOpen} setIsOpen={setIsOpen} />
+      </div>
+    </>
   )
 }
 

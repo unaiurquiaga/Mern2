@@ -13,7 +13,7 @@ const Cities = () => {
     }
   }, []);
   return (
-    <div className="app" style={tabletOrLess}>
+    <div className="app" style={{ tabletOrLess }}>
       <Select />
       <Weather tabletOrLess={tabletOrLess} />
       <button><NavLink to="/NextDays">Próximos días</NavLink></button>

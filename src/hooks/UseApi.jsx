@@ -14,7 +14,7 @@ const useApi = () => {
   const [longitude, setLongitude] = useState(null);
 
   useEffect(() => {
-    if (selectValue) {
+    if (selectValue && citiesCoords[selectValue]) {
       const { latitude, longitude } = citiesCoords[selectValue];
       setLatitude(latitude);
       setLongitude(longitude);
@@ -61,6 +61,7 @@ const useApi = () => {
       fetchApiData();
     }
   }, [latitude, longitude, selectValue, setApiInfo, setApiFiveDays]);
+
   return { loading };
 };
 

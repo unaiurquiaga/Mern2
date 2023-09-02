@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import Weather from "../components/Weather";
 import { ApiContext } from "../context/ApiContext";
-import UseApi from "../hooks/UseApi";
+import useApi from "../hooks/useApi";
 
 const Home = () => {
   const { apiInfo } = useContext(ApiContext);
@@ -12,7 +12,8 @@ const Home = () => {
     }
   }, []);
   return (
-    <div className="app" style={tabletOrLess}>
+    <div className="app" style={tabletOrLess ? { background: "yourBackgroundValueHere" } : {}}>
+
       <Weather tabletOrLess={tabletOrLess} />
     </div>
   );

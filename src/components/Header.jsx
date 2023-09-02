@@ -1,10 +1,11 @@
-import NavBar from "./NavBar"
+import NavBar from "./NavBar";
+import BurguerMenu from "./BurguerMenu";
 
 const Header = ({ tabletOrLess }) => {
   return (
     <header>
       {tabletOrLess ? (
-        <BurgerMenu />
+        <BurguerMenu />
       ) : (
         <NavBar />
       )}
